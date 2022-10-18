@@ -6,15 +6,18 @@ ADS1115 voltmeter;
 
 /*
 
+During testing I observed the following readings.
+
  Voltage = Raw read
  10.009836 = 20395
  10.009345 = 20394
- Therefore, each single bit rise = 0.000491 volts
- So meaningful digits are xx.xxx
 
-65535 (2 bytes) * 0.000491 = 32.177685 volts.
-Highest accuracy reading of 3 decimal places, and up to 30 volts = PAG_256
-(The circuit's not built to read higher volts? Not worth setting gain differently)
+Therefore, each single bit rise translates to 0.000491 volts, 1 bit is half a millivolt, as described in the documentation.
+So meaningful digits are xx.xxx
+
+65535 (2 bytes of steps) * 0.000491 (each steps increase in volts) = 32.177685 volts.
+Therefore the highest accuracy reading of 3 decimal places, and up to 30 volts is seen by setting the gain simply to PAG_256
+(The circuit's not built to read higher volts? So it's not worth setting the gain differently for higher voltage, lower accuracy readings.)
 
  */
 
