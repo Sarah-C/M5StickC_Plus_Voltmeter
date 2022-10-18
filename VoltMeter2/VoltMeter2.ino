@@ -29,7 +29,6 @@ void setup() {
   M5.Lcd.setTextSize(3);
   M5.Lcd.setRotation(3);
   M5.Lcd.setTextColor(WHITE, BLACK);
-  //M5.Lcd.fillRect(65, 10, 5, 10, BLACK);
 }
 
 void loop(void) {
