@@ -2,6 +2,7 @@
 The simplest voltmeter program for this voltmeter:
 
 https://shop.m5stack.com/products/voltmeter-unit-ads1115
+![image](https://user-images.githubusercontent.com/1586332/196499942-1855ed89-2424-4f96-842b-9a18566a773c.png)
 
 Did you know the example program that comes with the voltmeter is unneceserilly complex, and as you've noticed - very cluttered on screen?
 
