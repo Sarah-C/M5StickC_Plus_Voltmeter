@@ -1,4 +1,4 @@
-# M5StickC_Plus_Voltmeter
+# M5StickC-Plus : Voltmeter
 The simplest voltmeter program
 
 https://shop.m5stack.com/products/voltmeter-unit-ads1115
