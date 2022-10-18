@@ -12,7 +12,6 @@ So I've written a bare bones, no frills, full accuracy across the full 32v range
 To be short - the getValue() function works just fine for reading all the range the device is designed for....
 
 **Hear is why:**
-
 The demo code shows how to grab a sequence of raw ADC values, and average them out, and apply the calibration to it. But I've found the library function "getValue" works just fine. The demo's not working around anything, just there for information for the coder. We don't NEED to do it like that.
 
 Also - it measures 0 to 32 volts.... not 36 as shown on the label.         
