@@ -36,7 +36,7 @@ void setup() {
 
 void loop(void) {
   double volts = 0;
-  volts = voltmeter.getValue() / 1000.0; // Convert mV into volts.
+  volts = voltmeter.getValue() / 1000.0; // Convert pre-calibrated mV reading into volts.
   if(volts < 0.000001) volts = 0.0; // Random noise causes negative values.
   M5.Lcd.setCursor(30, 40);
   M5.Lcd.printf("%.3lf v   ", volts); 
