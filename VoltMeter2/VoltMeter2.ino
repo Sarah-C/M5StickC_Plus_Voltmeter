@@ -18,6 +18,16 @@ Highest accuracy reading of 3 decimal places, and up to 30 volts = PAG_256
 
  */
 
+// Polynomials from here:
+// https://github.com/G6EJD/LiPo_Battery_Capacity_Estimator/blob/master/ReadBatteryCapacity_LIPO.ino
+float getBatteryPercent(){
+  float voltage = M5.Axp.GetBatVoltage();
+  float batteryPercent = 2808.3808 * pow(voltage, 4) - 43560.9157 * pow(voltage, 3) + 252848.5888 * pow(voltage, 2) - 650767.4615 * voltage + 626532.5703;
+  if(batteryPercent < 0) batteryPercent = 0;
+  if(batteryPercent > 100) batteryPercent = 100;
+  return batteryPercent;
+}
+
 float getBatteryLevel(void){
   float emptyBatVoltage = 3.1f;
   float fullBatVoltage = 4.15;
@@ -43,7 +53,9 @@ void displayBattery(){
   M5.Lcd.setCursor(30, 10);  
   M5.Lcd.setTextFont(2);
   M5.Lcd.setTextSize(1);
-  M5.Lcd.printf("Battery : %.1f %%   ", getBatteryLevel()); 
+  M5.Lcd.printf("Battery : %.0f %% ", getBatteryPercent());
+  M5.Lcd.setCursor(155, 10);  
+  M5.Lcd.printf("%.2f v   ", M5.Axp.GetBatVoltage());
 }
 
 void displayVoltage(){
@@ -60,4 +72,3 @@ void loop(void){
   displayVoltage();
   displayBattery();
 }
-
